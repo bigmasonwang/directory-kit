@@ -1,0 +1,9 @@
+hosting:
+  name: Hosting
+  slug: hosting
+  description: Web hosting and cloud providers
+
+dev_tools:
+  name: Dev Tools
+  slug: dev-tools
+  description: Developer tools and utilities

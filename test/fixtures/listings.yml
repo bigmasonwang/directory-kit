@@ -1,0 +1,15 @@
+digitalocean:
+  name: DigitalOcean
+  url: https://digitalocean.com
+  description: Cloud infrastructure provider
+  status: published
+  category: hosting
+  user: one
+
+pending_tool:
+  name: Some Tool
+  url: https://example.com/tool
+  description: A pending tool submission
+  status: pending
+  category: dev_tools
+  user: one
