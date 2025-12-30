@@ -7,10 +7,10 @@ class Avo::Resources::User < Avo::BaseResource
 
   def fields
     field :id, as: :id
-    field :email, as: :text
+    field :avatar_url, as: :external_image
     field :name, as: :text
-    field :avatar_url, as: :text
+    field :email, as: :text
+    field :admin, as: :boolean
     field :provider, as: :text
-    field :uid, as: :text
   end
 end
