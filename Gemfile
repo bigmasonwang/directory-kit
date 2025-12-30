@@ -74,3 +74,4 @@ group :test do
   # https://github.com/rails/rails/issues/56406
   gem "minitest", "~> 5.0"
 end
+gem "avo", ">= 3.2"
