@@ -1,0 +1,13 @@
+one:
+  email: user@example.com
+  name: Test User
+  avatar_url: https://example.com/avatar.jpg
+  provider: google_oauth2
+  uid: "123456789"
+
+two:
+  email: another@example.com
+  name: Another User
+  avatar_url: https://example.com/avatar2.jpg
+  provider: google_oauth2
+  uid: "987654321"
