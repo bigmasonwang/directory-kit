@@ -20,10 +20,12 @@ Avo.configure do |config|
 
   ## == Authentication ==
   config.current_user_method do
-    Current.user
+    Current.user ||= User.find_by(id: session[:user_id])
   end
-  # config.authenticate_with do
-  # end
+  config.authenticate_with do
+    user = User.find_by(id: session[:user_id])
+    redirect_to main_app.root_path unless user&.admin?
+  end
 
   ## == Authorization ==
   # config.is_admin_method = :is_admin
