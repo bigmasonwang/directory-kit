@@ -11,4 +11,9 @@ class Avo::Resources::Listing < Avo::BaseResource
     field :category, as: :belongs_to
     field :user, as: :belongs_to
   end
+
+  def actions
+    action Avo::Actions::PublishListing
+    action Avo::Actions::RejectListing
+  end
 end
