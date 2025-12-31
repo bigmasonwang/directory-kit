@@ -38,4 +38,13 @@
       Submitted by <%= @listing.user.name %>
     </div>
   </div>
+
+  <% if @similar_listings.any? %>
+    <div class="mt-8">
+      <h2 class="text-lg font-semibold mb-4">Alternatives to <%= @listing.name %></h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <%= render partial: "listings/card", collection: @similar_listings, as: :listing %>
+      </div>
+    </div>
+  <% end %>
 </div>

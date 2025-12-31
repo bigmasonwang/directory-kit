@@ -10,6 +10,11 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @similar_listings = Listing.visible
+      .where(category: @listing.category)
+      .where.not(id: @listing.id)
+      .includes(:category, logo_attachment: :blob)
+      .limit(3)
   end
 
   def new
