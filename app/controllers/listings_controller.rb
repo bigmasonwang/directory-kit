@@ -25,7 +25,7 @@ class ListingsController < ApplicationController
     @listing = Current.user.listings.build(listing_params)
 
     if @listing.save
-      redirect_to root_path, notice: "Thanks! Your submission is pending review."
+      redirect_to root_path, notice: t("flash.submission_pending")
     else
       set_categories
       render :new, status: :unprocessable_entity

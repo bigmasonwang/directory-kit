@@ -1,5 +1,5 @@
 <div class="max-w-xl mx-auto">
-  <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Submit a Listing</h1>
+  <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"><%= t("listings.new.title") %></h1>
 
   <%= form_with model: @listing, class: "space-y-4 sm:space-y-6" do |f| %>
     <% if @listing.errors.any? %>
@@ -13,33 +13,33 @@
     <% end %>
 
     <div>
-      <%= f.label :name, class: "block font-medium mb-1" %>
+      <%= f.label :name, t("listings.new.name"), class: "block font-medium mb-1" %>
       <%= f.text_field :name, class: "w-full border rounded px-3 py-2", required: true %>
     </div>
 
     <div>
-      <%= f.label :url, "URL", class: "block font-medium mb-1" %>
+      <%= f.label :url, t("listings.new.url"), class: "block font-medium mb-1" %>
       <%= f.url_field :url, class: "w-full border rounded px-3 py-2", placeholder: "https://", required: true %>
     </div>
 
     <div>
-      <%= f.label :category_id, "Category", class: "block font-medium mb-1" %>
-      <%= f.collection_select :category_id, @categories, :id, :name, { prompt: "Select a category" }, { class: "w-full border rounded px-3 py-2", required: true } %>
+      <%= f.label :category_id, t("listings.new.category"), class: "block font-medium mb-1" %>
+      <%= f.collection_select :category_id, @categories, :id, :name, { prompt: t("listings.new.category_prompt") }, { class: "w-full border rounded px-3 py-2", required: true } %>
     </div>
 
     <div>
-      <%= f.label :description, class: "block font-medium mb-1" %>
+      <%= f.label :description, t("listings.new.description"), class: "block font-medium mb-1" %>
       <%= f.text_area :description, class: "w-full border rounded px-3 py-2", rows: 4, required: true %>
     </div>
 
     <div>
-      <%= f.label :logo, class: "block font-medium mb-1" %>
+      <%= f.label :logo, t("listings.new.logo"), class: "block font-medium mb-1" %>
       <%= f.file_field :logo, accept: "image/*", class: "w-full" %>
-      <p class="text-sm text-gray-500 mt-1">Optional. Recommended size: 200x200px</p>
+      <p class="text-sm text-gray-500 mt-1"><%= t("listings.new.logo_hint") %></p>
     </div>
 
     <div>
-      <%= f.submit "Submit for Review", class: "w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded cursor-pointer" %>
+      <%= f.submit t("listings.new.submit"), class: "w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded cursor-pointer" %>
     </div>
   <% end %>
 </div>

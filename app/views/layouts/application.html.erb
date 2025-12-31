@@ -29,19 +29,20 @@
         <%= link_to "Dirkit", root_path, class: "text-xl font-bold" %>
 
         <div class="flex items-center gap-2 sm:gap-4">
+          <%= select_tag :locale, options_for_select(locale_options_for_select, current_locale_url), class: "text-sm border rounded px-2 py-1", onchange: "window.location.href = this.value" %>
           <% if signed_in? %>
-            <%= link_to "Submit", new_listing_path, class: "px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded" %>
+            <%= link_to t("layouts.header.submit"), new_listing_path, class: "px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded" %>
             <% if current_user.admin? %>
-              <%= link_to "Admin", "/avo", class: "text-gray-600 hover:text-gray-900 text-sm sm:text-base" %>
+              <%= link_to t("layouts.header.admin"), "/avo", class: "text-gray-600 hover:text-gray-900 text-sm sm:text-base" %>
             <% end %>
             <div class="flex items-center gap-2">
               <% if current_user.avatar_url.present? %>
                 <%= image_tag current_user.avatar_url, class: "w-7 h-7 sm:w-8 sm:h-8 rounded-full", alt: current_user.name %>
               <% end %>
-              <%= button_to "Sign out", logout_path, method: :delete, class: "text-gray-600 hover:text-gray-900 text-sm sm:text-base" %>
+              <%= button_to t("layouts.header.sign_out"), logout_path, method: :delete, class: "text-gray-600 hover:text-gray-900 text-sm sm:text-base" %>
             </div>
           <% else %>
-            <%= button_to "Sign in to Submit", "/auth/google_oauth2", method: :post, data: { turbo: false }, class: "px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded" %>
+            <%= button_to t("layouts.header.sign_in"), "/auth/google_oauth2", method: :post, data: { turbo: false }, class: "px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded" %>
           <% end %>
         </div>
       </nav>

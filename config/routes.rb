@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   mount_avo
 
-  # Authentication
+  # Authentication (outside locale scope - OAuth callbacks don't need localization)
   get "/auth/:provider/callback", to: "sessions#create"
   get "/auth/failure", to: "sessions#failure"
   delete "/logout", to: "sessions#destroy"
 
-  # Listings
-  resources :listings, only: %i[index show new create]
-  get "/categories/:category", to: "listings#index", as: :category
-
   # Health check
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Homepage is listings index
-  root "listings#index"
+  # Localized routes
+  scope "(:locale)", locale: /en|zh-CN/ do
+    resources :listings, only: %i[index show new create]
+    get "/categories/:category", to: "listings#index", as: :category
+    root "listings#index"
+  end
 end

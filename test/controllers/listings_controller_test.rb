@@ -23,25 +23,25 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "index filters by category" do
-    get category_url(categories(:hosting).slug)
+    get category_url(category: categories(:hosting).slug)
     assert_response :success
     assert_match @listing.name, response.body
   end
 
   # Show tests
   test "should get show for published listing" do
-    get listing_url(@listing)
+    get listing_url(id: @listing)
     assert_response :success
   end
 
   test "show displays listing details" do
-    get listing_url(@listing)
+    get listing_url(id: @listing)
     assert_match @listing.name, response.body
     assert_match @listing.description, response.body
   end
 
   test "show returns 404 for pending listing" do
-    get listing_url(listings(:pending_tool))
+    get listing_url(id: listings(:pending_tool))
     assert_response :not_found
   end
 

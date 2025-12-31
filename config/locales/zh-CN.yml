@@ -1,0 +1,31 @@
+zh-CN:
+  layouts:
+    header:
+      submit: "提交"
+      sign_in: "登录后提交"
+      sign_out: "退出"
+      admin: "管理"
+  listings:
+    index:
+      all: "全部"
+      categories: "分类"
+      no_listings: "暂无内容"
+    show:
+      back: "返回"
+      visit_site: "访问网站"
+      submitted_by: "提交者：%{name}"
+      alternatives_to: "%{name} 的替代品"
+    new:
+      title: "提交项目"
+      name: "名称"
+      url: "网址"
+      category: "分类"
+      category_prompt: "请选择分类"
+      description: "描述"
+      logo: "图标"
+      logo_hint: "可选。建议尺寸：200x200像素"
+      submit: "提交审核"
+    card:
+      visit_site: "访问网站"
+  flash:
+    submission_pending: "感谢提交！您的内容正在等待审核。"

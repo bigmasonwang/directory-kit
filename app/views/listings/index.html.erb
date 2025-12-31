@@ -1,9 +1,9 @@
 <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
   <!-- Categories - horizontal on mobile, sidebar on desktop -->
   <aside class="lg:w-48 lg:shrink-0">
-    <h3 class="font-semibold mb-3 hidden lg:block">Categories</h3>
+    <h3 class="font-semibold mb-3 hidden lg:block"><%= t("listings.index.categories") %></h3>
     <div class="flex flex-wrap gap-2 lg:flex-col lg:gap-0 lg:space-y-1">
-      <%= link_to "All", root_path, class: "px-3 py-1.5 lg:py-2 rounded text-sm lg:text-base #{@category.nil? ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 lg:bg-transparent hover:bg-gray-100'}" %>
+      <%= link_to t("listings.index.all"), root_path, class: "px-3 py-1.5 lg:py-2 rounded text-sm lg:text-base #{@category.nil? ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 lg:bg-transparent hover:bg-gray-100'}" %>
       <% @categories.each do |category| %>
         <%= link_to category.name, category_path(category.slug), class: "px-3 py-1.5 lg:py-2 rounded text-sm lg:text-base #{@category == category ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 lg:bg-transparent hover:bg-gray-100'}" %>
       <% end %>
@@ -21,7 +21,7 @@
         <%= render partial: "listings/card", collection: @listings, as: :listing %>
       </div>
     <% else %>
-      <p class="text-gray-500">No listings yet.</p>
+      <p class="text-gray-500"><%= t("listings.index.no_listings") %></p>
     <% end %>
   </div>
 </div>
