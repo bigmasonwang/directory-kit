@@ -41,7 +41,7 @@
               <%= button_to "Sign out", logout_path, method: :delete, class: "text-gray-600 hover:text-gray-900 text-sm sm:text-base" %>
             </div>
           <% else %>
-            <%= button_to "Sign in", "/auth/google_oauth2", method: :post, data: { turbo: false }, class: "px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded" %>
+            <%= button_to "Sign in to Submit", "/auth/google_oauth2", method: :post, data: { turbo: false }, class: "px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-blue-600 hover:bg-blue-700 text-white rounded" %>
           <% end %>
         </div>
       </nav>
