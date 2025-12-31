@@ -2,10 +2,10 @@
   <!-- Categories - horizontal on mobile, sidebar on desktop -->
   <aside class="lg:w-48 lg:shrink-0">
     <h3 class="font-semibold mb-3 hidden lg:block"><%= t("listings.index.categories") %></h3>
-    <div class="flex flex-wrap gap-2 lg:flex-col lg:gap-0 lg:space-y-1">
-      <%= link_to t("listings.index.all"), root_path, class: "px-3 py-1.5 lg:py-2 rounded text-sm lg:text-base #{@category.nil? ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 lg:bg-transparent hover:bg-gray-100'}" %>
+    <div class="flex flex-wrap gap-2 lg:flex-col lg:gap-1">
+      <%= link_to t("listings.index.all"), root_path, class: "btn btn-sm #{@category.nil? ? 'btn-primary' : 'btn-ghost'}" %>
       <% @categories.each do |category| %>
-        <%= link_to category.name, category_path(category.slug), class: "px-3 py-1.5 lg:py-2 rounded text-sm lg:text-base #{@category == category ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 lg:bg-transparent hover:bg-gray-100'}" %>
+        <%= link_to category.name, category_path(category.slug), class: "btn btn-sm #{@category == category ? 'btn-primary' : 'btn-ghost'}" %>
       <% end %>
     </div>
   </aside>
@@ -13,7 +13,7 @@
   <!-- Listings Grid -->
   <div class="flex-1">
     <% if @category %>
-      <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6"><%= @category.name %></h1>
+      <h1 class="text-2xl font-bold mb-6"><%= @category.name %></h1>
     <% end %>
 
     <% if @listings.any? %>
@@ -21,7 +21,7 @@
         <%= render partial: "listings/card", collection: @listings, as: :listing %>
       </div>
     <% else %>
-      <p class="text-gray-500"><%= t("listings.index.no_listings") %></p>
+      <p class="text-base-content/60"><%= t("listings.index.no_listings") %></p>
     <% end %>
   </div>
 </div>
