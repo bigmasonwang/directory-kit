@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   before_action :set_categories, only: %i[index new]
 
   def index
-    @listings = Listing.visible.includes(:category, :user, logo_attachment: :blob)
+    @listings = Listing.visible.includes(:category, :user, :tags, logo_attachment: :blob)
     @listings = @listings.where(category: @category) if @category
     @listings = @listings.order(created_at: :desc)
   end
