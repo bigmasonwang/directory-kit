@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :listings, only: %i[index show new create]
     get "/categories/:category", to: "listings#index", as: :category
     resources :tags, only: %i[index show], param: :slug
+    resources :posts, only: [:index, :show], param: :slug, path: "blog"
     root "listings#index"
   end
 end
