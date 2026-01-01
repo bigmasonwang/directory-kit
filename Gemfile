@@ -75,3 +75,5 @@ group :test do
   gem "minitest", "~> 5.0"
 end
 gem "avo", ">= 3.2"
+gem "marksmith"
+gem "commonmarker"
