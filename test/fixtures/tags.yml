@@ -1,0 +1,11 @@
+chatbot:
+  name: Chatbot
+  slug: chatbot
+
+automation:
+  name: Automation
+  slug: automation
+
+hosting:
+  name: Hosting
+  slug: hosting
