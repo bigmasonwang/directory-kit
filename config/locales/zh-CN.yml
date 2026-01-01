@@ -7,6 +7,7 @@ zh-CN:
       admin: "管理"
       categories: "分类"
       tags: "标签"
+      blog: "博客"
   listings:
     index:
       all: "全部"
