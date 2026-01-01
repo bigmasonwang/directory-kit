@@ -24,8 +24,16 @@ zh-CN:
       description: "描述"
       logo: "图标"
       logo_hint: "可选。建议尺寸：200x200像素"
+      tags: "标签"
+      tags_hint: "最多选择5个标签（可选）"
       submit: "提交审核"
     card:
       visit_site: "访问网站"
+  tags:
+    index:
+      title: "浏览标签"
+    show:
+      back: "所有标签"
+      no_listings: "暂无此标签的项目。"
   flash:
     submission_pending: "感谢提交！您的内容正在等待审核。"
