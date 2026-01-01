@@ -25,6 +25,13 @@
           <p class="text-base-content/60 mt-1">
             <%= link_to @listing.category.name, category_path(@listing.category.slug), class: "link link-hover" %>
           </p>
+          <% if @listing.tags.any? %>
+            <div class="flex flex-wrap gap-1 mt-2">
+              <% @listing.tags.each do |tag| %>
+                <%= link_to tag.name, tag_path(tag.slug), class: "badge badge-outline badge-sm hover:badge-primary" %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
 

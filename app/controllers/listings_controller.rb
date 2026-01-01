@@ -35,7 +35,7 @@ class ListingsController < ApplicationController
   private
 
   def set_listing
-    @listing = Listing.visible.find(params[:id])
+    @listing = Listing.visible.includes(:tags).find(params[:id])
   end
 
   def set_categories
