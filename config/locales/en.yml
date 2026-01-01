@@ -24,6 +24,8 @@ en:
       description: "Description"
       logo: "Logo"
       logo_hint: "Optional. Recommended size: 200x200px"
+      tags: "Tags"
+      tags_hint: "Select up to 5 tags (optional)"
       submit: "Submit for Review"
     card:
       visit_site: "Visit site"

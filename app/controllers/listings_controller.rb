@@ -19,6 +19,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @tags = Tag.order(:name)
   end
 
   def create
@@ -28,6 +29,7 @@ class ListingsController < ApplicationController
       redirect_to root_path, notice: t("flash.submission_pending")
     else
       set_categories
+      @tags = Tag.order(:name)
       render :new, status: :unprocessable_entity
     end
   end
@@ -44,6 +46,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:name, :url, :description, :category_id, :logo)
+    params.require(:listing).permit(:name, :url, :description, :category_id, :logo, tag_ids: [])
   end
 end

@@ -28,6 +28,21 @@
     </fieldset>
 
     <fieldset class="fieldset">
+      <legend class="fieldset-legend"><%= t("listings.new.tags") %></legend>
+      <%= f.select :tag_ids,
+          @tags.map { |t| [t.name, t.id] },
+          {},
+          {
+            multiple: true,
+            data: {
+              controller: "tag-select",
+              tag_select_options_value: @tags.map { |t| { id: t.id, name: t.name } }.to_json
+            }
+          } %>
+      <p class="label"><%= t("listings.new.tags_hint") %></p>
+    </fieldset>
+
+    <fieldset class="fieldset">
       <legend class="fieldset-legend"><%= t("listings.new.description") %></legend>
       <%= f.text_area :description, class: "textarea w-full", rows: 4, required: true %>
     </fieldset>
