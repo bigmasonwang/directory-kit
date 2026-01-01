@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|zh-CN/ do
     resources :listings, only: %i[index show new create]
     get "/categories/:category", to: "listings#index", as: :category
+    resources :tags, only: %i[index show], param: :slug
     root "listings#index"
   end
 end
