@@ -36,5 +36,8 @@ en:
     index:
       title: "Browse Tags"
       all: "All"
+  posts:
+    show:
+      back: "Back to Blog"
   flash:
     submission_pending: "Thanks! Your submission is pending review."

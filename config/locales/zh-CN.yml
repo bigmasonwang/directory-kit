@@ -36,5 +36,8 @@ zh-CN:
     index:
       title: "浏览标签"
       all: "全部"
+  posts:
+    show:
+      back: "返回博客"
   flash:
     submission_pending: "感谢提交！您的内容正在等待审核。"
