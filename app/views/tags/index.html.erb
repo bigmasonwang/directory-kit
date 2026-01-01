@@ -1,12 +1,28 @@
-<div class="max-w-4xl mx-auto">
-  <h1 class="text-2xl font-bold mb-6"><%= t("tags.index.title") %></h1>
-
-  <div class="flex flex-wrap gap-2">
-    <% @tags.each do |tag| %>
-      <%= link_to tag_path(tag.slug), class: "badge badge-lg badge-outline gap-2 hover:badge-primary" do %>
-        <%= tag.name %>
-        <span class="badge badge-sm"><%= tag.listings_count %></span>
+<div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+  <!-- Tags - horizontal on mobile, sidebar on desktop -->
+  <aside class="lg:w-48 lg:shrink-0">
+    <ul class="menu menu-horizontal lg:menu-vertical bg-base-200 rounded-box lg:bg-transparent lg:p-0 flex-wrap">
+      <li><%= link_to t("tags.index.all"), tags_path, class: @tag.nil? ? "menu-active" : "" %></li>
+      <% @tags.each do |tag| %>
+        <li><%= link_to "##{tag.name}", tag_path(tag.slug), class: @tag&.id == tag.id ? "menu-active" : "" %></li>
       <% end %>
+    </ul>
+  </aside>
+
+  <!-- Listings Grid -->
+  <div class="flex-1">
+    <% if @tag %>
+      <h1 class="text-2xl font-bold mb-6">#<%= @tag.name %></h1>
+    <% else %>
+      <h1 class="text-2xl font-bold mb-6"><%= t("tags.index.title") %></h1>
+    <% end %>
+
+    <% if @listings.any? %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+        <%= render partial: "listings/card", collection: @listings, as: :listing %>
+      </div>
+    <% else %>
+      <p class="text-base-content/60"><%= t("listings.index.no_listings") %></p>
     <% end %>
   </div>
 </div>

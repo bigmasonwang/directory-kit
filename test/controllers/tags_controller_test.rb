@@ -16,7 +16,7 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
     get tag_url(slug: @tag.slug)
     assert_response :success
-    assert_select "h1", @tag.name
+    assert_select "h1", "##{@tag.name}"
   end
 
   test "show displays listings with tag" do

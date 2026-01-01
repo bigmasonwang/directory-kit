@@ -32,8 +32,6 @@ zh-CN:
   tags:
     index:
       title: "浏览标签"
-    show:
-      back: "所有标签"
-      no_listings: "暂无此标签的项目。"
+      all: "全部"
   flash:
     submission_pending: "感谢提交！您的内容正在等待审核。"

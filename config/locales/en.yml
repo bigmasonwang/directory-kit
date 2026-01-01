@@ -32,8 +32,6 @@ en:
   tags:
     index:
       title: "Browse Tags"
-    show:
-      back: "All Tags"
-      no_listings: "No listings with this tag yet."
+      all: "All"
   flash:
     submission_pending: "Thanks! Your submission is pending review."
