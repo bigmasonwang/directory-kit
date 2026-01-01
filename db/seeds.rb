@@ -22,6 +22,23 @@ end
 
 puts "Created #{Category.count} categories"
 
+# Tags
+tags_data = [
+  # AI
+  "Chatbot", "Image Generation", "Video Generation", "Voice Synthesis",
+  "Automation", "Writing Assistant", "Research", "Productivity",
+  # Cloud
+  "Hosting", "Database", "Serverless", "Deployment", "CDN", "VPS",
+  # Dev Tools
+  "Code Editor", "API Tool", "Terminal", "Monitoring", "Documentation", "Version Control"
+]
+
+tags_data.each do |name|
+  Tag.find_or_create_by!(name: name)
+end
+
+puts "Created #{Tag.count} tags"
+
 ai_tools = Category.find_by!(name: "AI Tools")
 
 # AI Tools Listings
