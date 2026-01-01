@@ -7,7 +7,7 @@ image: dirkit
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    - <%= ENV['SERVER_IP_ADDRESS'] %>
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -76,13 +76,12 @@ volumes:
 # version inside the asset_path.
 asset_path: /rails/public/assets
 
-
 # Configure the image builder.
 builder:
   arch: amd64
 
   # # Build image via remote server (useful for faster amd64 builds on arm64 computers)
-  # remote: ssh://docker@docker-builder-server
+  remote: ssh://mason@192.168.3.68
   #
   # # Pass arguments and secrets to the Docker build process
   # args:
@@ -90,11 +89,9 @@ builder:
   # secrets:
   #   - GITHUB_TOKEN
   #   - RAILS_MASTER_KEY
-
 # Use a different ssh user than root
-# ssh:
-#   user: app
-
+ssh:
+  user: ubuntu
 # Use accessory services (secrets come from .kamal/secrets).
 # accessories:
 #   db:
