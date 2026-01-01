@@ -25,16 +25,15 @@
         <div class="flex-1 min-w-0">
           <h3 class="card-title text-base"><%= listing.name %></h3>
           <p class="text-sm text-base-content/60 line-clamp-2"><%= listing.description %></p>
-          <span class="badge badge-ghost badge-sm mt-2"><%= listing.category.name %></span>
-          <% if listing.tags.any? %>
-            <div class="flex flex-wrap gap-1 mt-1">
-              <% listing.tags.first(3).each do |tag| %>
-                <%= link_to tag.name, tag_path(tag.slug), class: "badge badge-outline badge-xs hover:badge-primary" %>
-              <% end %>
-            </div>
-          <% end %>
         </div>
       <% end %>
     </div>
+    <% if listing.tags.any? %>
+      <div class="flex flex-wrap gap-2 mt-2">
+        <% listing.tags.first(3).each do |tag| %>
+          <%= link_to "##{tag.name}", tag_path(tag.slug), class: "text-xs text-base-content/60 hover:text-primary" %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
