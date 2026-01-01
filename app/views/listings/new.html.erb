@@ -32,13 +32,7 @@
       <%= f.select :tag_ids,
           @tags.map { |t| [t.name, t.id] },
           {},
-          {
-            multiple: true,
-            data: {
-              controller: "tag-select",
-              tag_select_options_value: @tags.map { |t| { id: t.id, name: t.name } }.to_json
-            }
-          } %>
+          { multiple: true, class: "w-full", data: { controller: "tag-select" } } %>
       <p class="label"><%= t("listings.new.tags_hint") %></p>
     </fieldset>
 

@@ -1,0 +1,49 @@
+/* Tom Select with DaisyUI styling */
+select[data-controller="tag-select"].tomselected,
+select[data-controller="tag-select"].ts-hidden-accessible {
+  @apply !hidden;
+}
+
+.ts-wrapper {
+  @apply w-full;
+}
+
+.ts-wrapper .ts-control {
+  @apply border border-base-300 rounded-lg bg-base-100 px-3 py-2 min-h-12;
+  @apply focus:outline-none focus:border-primary;
+  box-shadow: none;
+}
+
+.ts-wrapper.focus .ts-control {
+  @apply border-primary;
+  box-shadow: none;
+}
+
+.ts-wrapper .ts-control > input {
+  @apply placeholder:text-base-content/40;
+}
+
+.ts-wrapper .ts-dropdown {
+  @apply border border-base-300 rounded-lg bg-base-100 shadow-lg mt-1;
+}
+
+.ts-wrapper .ts-dropdown .option {
+  @apply px-3 py-2 cursor-pointer;
+}
+
+.ts-wrapper .ts-dropdown .option:hover,
+.ts-wrapper .ts-dropdown .option.active {
+  @apply bg-base-200;
+}
+
+.ts-wrapper .ts-dropdown .option.selected {
+  @apply bg-primary/10;
+}
+
+.ts-wrapper .ts-control .item {
+  @apply bg-base-200 text-base-content rounded-lg px-2 py-1 text-sm;
+}
+
+.ts-wrapper .ts-control .item .remove {
+  @apply border-none text-base-content/60 hover:text-error ml-1;
+}
