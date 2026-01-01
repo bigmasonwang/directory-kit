@@ -18,6 +18,10 @@ class Listing < ApplicationRecord
   normalizes :name, with: -> { _1.strip }
   normalizes :url, with: -> { _1.strip }
 
+  def favicon_url(size: 128)
+    "https://www.google.com/s2/favicons?domain=#{URI.parse(url).host}&sz=#{size}"
+  end
+
   private
 
   def tags_limit

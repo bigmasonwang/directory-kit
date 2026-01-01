@@ -6,11 +6,7 @@
       <div class="flex items-start gap-4 sm:gap-6">
         <div class="avatar">
           <div class="w-16 sm:w-20 rounded-lg">
-            <% if @listing.logo.attached? %>
-              <%= image_tag @listing.logo %>
-            <% else %>
-              <%= image_tag "https://www.google.com/s2/favicons?domain=#{URI.parse(@listing.url).host}&sz=128", alt: @listing.name %>
-            <% end %>
+            <%= image_tag @listing.logo.attached? ? @listing.logo : @listing.favicon_url, alt: @listing.name %>
           </div>
         </div>
 
