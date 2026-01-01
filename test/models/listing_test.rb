@@ -78,4 +78,16 @@ class ListingTest < ActiveSupport::TestCase
     listing = listings(:digitalocean)
     assert_equal users(:one), listing.user
   end
+
+  test "can have many tags" do
+    listing = listings(:digitalocean)
+    assert_respond_to listing, :tags
+  end
+
+  test "validates maximum of 5 tags" do
+    listing = listings(:digitalocean)
+    6.times { |i| listing.tags << Tag.create!(name: "Tag #{i}") }
+    assert_not listing.valid?
+    assert_includes listing.errors[:tags], "are limited to 5"
+  end
 end

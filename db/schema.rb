@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_01_012426) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_01_012949) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
@@ -46,6 +46,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_01_012426) do
     t.string "slug", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "listing_tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "listing_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id", "tag_id"], name: "index_listing_tags_on_listing_id_and_tag_id", unique: true
+    t.index ["listing_id"], name: "index_listing_tags_on_listing_id"
+    t.index ["tag_id"], name: "index_listing_tags_on_tag_id"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -85,6 +95,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_01_012426) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "listing_tags", "listings"
+  add_foreign_key "listing_tags", "tags"
   add_foreign_key "listings", "categories"
   add_foreign_key "listings", "users"
 end
