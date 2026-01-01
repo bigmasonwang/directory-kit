@@ -37,6 +37,9 @@ en:
       title: "Browse Tags"
       all: "All"
   posts:
+    index:
+      title: "Blog"
+      no_posts: "No posts yet."
     show:
       back: "Back to Blog"
   flash:

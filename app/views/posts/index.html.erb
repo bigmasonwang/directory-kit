@@ -1,5 +1,5 @@
 <div class="max-w-2xl mx-auto">
-  <h1 class="text-2xl font-bold mb-6">Blog</h1>
+  <h1 class="text-2xl font-bold mb-6"><%= t("posts.index.title") %></h1>
 
   <% if @posts.any? %>
     <div class="space-y-6">
@@ -10,13 +10,13 @@
               <%= link_to post.title, post_path(slug: post.slug), class: "link link-hover" %>
             </h2>
             <p class="text-sm text-base-content/60">
-              <%= post.published_at.strftime("%B %d, %Y") %>
+              <%= l(post.published_at, format: :long) %>
             </p>
           </div>
         </article>
       <% end %>
     </div>
   <% else %>
-    <p class="text-base-content/60">No posts yet.</p>
+    <p class="text-base-content/60"><%= t("posts.index.no_posts") %></p>
   <% end %>
 </div>

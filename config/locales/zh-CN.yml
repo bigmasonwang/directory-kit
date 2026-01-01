@@ -37,6 +37,9 @@ zh-CN:
       title: "浏览标签"
       all: "全部"
   posts:
+    index:
+      title: "博客"
+      no_posts: "暂无文章"
     show:
       back: "返回博客"
   flash:

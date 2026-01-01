@@ -5,7 +5,7 @@
     <div class="card-body">
       <h1 class="card-title text-2xl"><%= @post.title %></h1>
       <p class="text-sm text-base-content/60">
-        <%= @post.published_at.strftime("%B %d, %Y") %>
+        <%= l(@post.published_at, format: :long) %>
       </p>
 
       <div class="divider"></div>
