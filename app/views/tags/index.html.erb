@@ -3,7 +3,10 @@
 
   <div class="flex flex-wrap gap-2">
     <% @tags.each do |tag| %>
-      <%= link_to tag.name, tag_path(tag.slug), class: "badge badge-lg badge-outline gap-2 hover:badge-primary" %>
+      <%= link_to tag_path(tag.slug), class: "badge badge-lg badge-outline gap-2 hover:badge-primary" do %>
+        <%= tag.name %>
+        <span class="badge badge-sm"><%= tag.listings_count %></span>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -10,7 +10,7 @@ class TagsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get tags_url
     assert_response :success
-    assert_select "a", @tag.name
+    assert_select "a", text: /#{@tag.name}/
   end
 
   test "should get show" do
