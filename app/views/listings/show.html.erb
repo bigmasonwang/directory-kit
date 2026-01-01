@@ -26,9 +26,9 @@
             <%= link_to @listing.category.name, category_path(@listing.category.slug), class: "link link-hover" %>
           </p>
           <% if @listing.tags.any? %>
-            <div class="flex flex-wrap gap-1 mt-2">
+            <div class="flex flex-wrap gap-2 mt-2">
               <% @listing.tags.each do |tag| %>
-                <%= link_to tag.name, tag_path(tag.slug), class: "badge badge-outline badge-sm hover:badge-primary" %>
+                <%= link_to "##{tag.name}", tag_path(tag.slug), class: "text-sm text-base-content/60 hover:text-primary" %>
               <% end %>
             </div>
           <% end %>
