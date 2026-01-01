@@ -1,0 +1,14 @@
+<div class="max-w-2xl mx-auto">
+  <%= link_to "← Back to blog", posts_path, class: "btn btn-ghost btn-sm mb-4" %>
+
+  <article>
+    <h1 class="text-3xl font-bold mb-2"><%= @post.title %></h1>
+    <p class="text-sm text-base-content/60 mb-6">
+      <%= l(@post.published_at, format: :long) %>
+    </p>
+
+    <div class="prose">
+      <%= simple_format(@post.body) %>
+    </div>
+  </article>
+</div>

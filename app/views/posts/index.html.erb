@@ -1,0 +1,14 @@
+<div class="max-w-2xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6">Blog</h1>
+
+  <% @posts.each do |post| %>
+    <article class="mb-8">
+      <h2 class="text-xl font-semibold">
+        <%= link_to post.title, post_path(slug: post.slug), class: "link link-hover" %>
+      </h2>
+      <p class="text-sm text-base-content/60 mt-1">
+        <%= l(post.published_at, format: :long) %>
+      </p>
+    </article>
+  <% end %>
+</div>
