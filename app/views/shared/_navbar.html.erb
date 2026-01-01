@@ -1,0 +1,14 @@
+<div class="navbar bg-base-100 border-b border-base-300">
+  <div class="navbar-start">
+    <%= link_to "Dirkit", root_path, class: "btn btn-ghost text-xl" %>
+  </div>
+  <div class="navbar-end gap-2">
+    <%= render "shared/locale_selector" %>
+    <% if signed_in? %>
+      <%= link_to t("layouts.header.submit"), new_listing_path, class: "btn btn-primary btn-sm" %>
+      <%= render "shared/user_menu" %>
+    <% else %>
+      <%= button_to t("layouts.header.sign_in"), "/auth/google_oauth2", method: :post, data: { turbo: false }, class: "btn btn-primary btn-sm" %>
+    <% end %>
+  </div>
+</div>
