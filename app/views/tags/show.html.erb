@@ -1,0 +1,13 @@
+<div class="max-w-6xl mx-auto">
+  <%= link_to "← #{t('tags.show.back')}", tags_path, class: "btn btn-ghost btn-sm mb-4" %>
+
+  <h1 class="text-2xl font-bold mb-6"><%= @tag.name %></h1>
+
+  <% if @listings.any? %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+      <%= render partial: "listings/card", collection: @listings, as: :listing %>
+    </div>
+  <% else %>
+    <p class="text-base-content/60"><%= t("tags.show.no_listings") %></p>
+  <% end %>
+</div>

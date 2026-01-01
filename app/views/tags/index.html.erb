@@ -1,0 +1,9 @@
+<div class="max-w-4xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6"><%= t("tags.index.title") %></h1>
+
+  <div class="flex flex-wrap gap-2">
+    <% @tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag.slug), class: "badge badge-lg badge-outline gap-2 hover:badge-primary" %>
+    <% end %>
+  </div>
+</div>
