@@ -1,14 +1,22 @@
 <div class="max-w-2xl mx-auto">
   <h1 class="text-2xl font-bold mb-6">Blog</h1>
 
-  <% @posts.each do |post| %>
-    <article class="mb-8">
-      <h2 class="text-xl font-semibold">
-        <%= link_to post.title, post_path(slug: post.slug), class: "link link-hover" %>
-      </h2>
-      <p class="text-sm text-base-content/60 mt-1">
-        <%= l(post.published_at, format: :long) %>
-      </p>
-    </article>
+  <% if @posts.any? %>
+    <div class="space-y-6">
+      <% @posts.each do |post| %>
+        <article class="card card-border bg-base-100">
+          <div class="card-body">
+            <h2 class="card-title">
+              <%= link_to post.title, post_path(slug: post.slug), class: "link link-hover" %>
+            </h2>
+            <p class="text-sm text-base-content/60">
+              <%= post.published_at.strftime("%B %d, %Y") %>
+            </p>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-base-content/60">No posts yet.</p>
   <% end %>
 </div>
