@@ -1,5 +1,5 @@
 class Avo::Resources::Listing < Avo::BaseResource
-  self.includes = [ :category, :user ]
+  self.includes = [ :category, :user, :tags ]
 
   def fields
     field :id, as: :id
@@ -10,6 +10,7 @@ class Avo::Resources::Listing < Avo::BaseResource
     field :status, as: :badge, options: { pending: :warning, published: :success, rejected: :danger }
     field :category, as: :belongs_to
     field :user, as: :belongs_to
+    field :tags, as: :has_many
   end
 
   def actions
