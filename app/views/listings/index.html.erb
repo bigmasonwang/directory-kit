@@ -1,7 +1,6 @@
 <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
   <!-- Categories - horizontal on mobile, sidebar on desktop -->
   <aside class="lg:w-48 lg:shrink-0">
-    <h3 class="font-semibold mb-3 hidden lg:block"><%= t("listings.index.categories") %></h3>
     <ul class="menu menu-horizontal lg:menu-vertical bg-base-200 rounded-box lg:bg-transparent lg:p-0">
       <li><%= link_to t("listings.index.all"), root_path, class: @category.nil? ? "menu-active" : "" %></li>
       <% @categories.each do |category| %>
