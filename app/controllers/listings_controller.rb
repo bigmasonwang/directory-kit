@@ -10,11 +10,26 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @similar_listings = Listing.visible
-      .where(category: @listing.category)
-      .where.not(id: @listing.id)
-      .includes(:category, logo_attachment: :blob)
-      .limit(3)
+    tag_ids = @listing.tag_ids
+
+    @similar_listings = if tag_ids.any?
+      # Find listings with shared tags, ordered by number of matches
+      Listing.visible
+        .joins(:listing_tags)
+        .where(listing_tags: { tag_id: tag_ids })
+        .where.not(id: @listing.id)
+        .group(:id)
+        .order("COUNT(listing_tags.id) DESC")
+        .includes(:category, :tags, logo_attachment: :blob)
+        .limit(3)
+    else
+      # Fall back to same category
+      Listing.visible
+        .where(category: @listing.category)
+        .where.not(id: @listing.id)
+        .includes(:category, :tags, logo_attachment: :blob)
+        .limit(3)
+    end
   end
 
   def new
