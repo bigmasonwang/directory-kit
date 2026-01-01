@@ -5,6 +5,8 @@ zh-CN:
       sign_in: "登录后提交"
       sign_out: "退出"
       admin: "管理"
+      categories: "分类"
+      tags: "标签"
   listings:
     index:
       all: "全部"

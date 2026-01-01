@@ -1,7 +1,9 @@
 <div class="bg-base-100 border-b border-base-300">
   <div class="navbar container mx-auto">
-    <div class="navbar-start">
+    <div class="navbar-start gap-1">
       <%= link_to "Dirkit", root_path, class: "btn btn-ghost text-xl" %>
+      <%= link_to t("layouts.header.categories"), root_path, class: "btn btn-ghost btn-sm" %>
+      <%= link_to t("layouts.header.tags"), tags_path, class: "btn btn-ghost btn-sm" %>
     </div>
     <div class="navbar-end gap-2">
       <%= render "shared/locale_selector" %>

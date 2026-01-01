@@ -5,6 +5,8 @@ en:
       sign_in: "Sign in to Submit"
       sign_out: "Sign out"
       admin: "Admin"
+      categories: "Categories"
+      tags: "Tags"
   listings:
     index:
       all: "All"
