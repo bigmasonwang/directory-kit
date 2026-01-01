@@ -101,6 +101,29 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
   end
 
+  test "create saves listing with tags" do
+    sign_in_as(@user)
+    tag1 = tags(:chatbot)
+    tag2 = tags(:automation)
+
+    assert_difference("Listing.count") do
+      post listings_url, params: {
+        listing: {
+          name: "Tagged Tool",
+          url: "https://tagged.com",
+          description: "A tool with tags",
+          category_id: categories(:hosting).id,
+          tag_ids: [ tag1.id, tag2.id ]
+        }
+      }
+    end
+
+    listing = Listing.last
+    assert_equal 2, listing.tags.count
+    assert_includes listing.tags, tag1
+    assert_includes listing.tags, tag2
+  end
+
   private
 
   def sign_in_as(user)
