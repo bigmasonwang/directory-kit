@@ -40,6 +40,9 @@ en:
       title: Blog
     show:
       back: Back to Blog
+  seo:
+    default_description: Discover and share the best tools, products, and resources
+    site_name: Dirkit
   tags:
     index:
       all: All

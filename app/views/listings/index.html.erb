@@ -1,3 +1,6 @@
+<% content_for :title, @category ? "#{@category.name} - #{t('seo.site_name')}" : t('seo.site_name') %>
+<% content_for :description, @category&.description || t('seo.default_description') %>
+
 <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
   <!-- Categories - horizontal on mobile, sidebar on desktop -->
   <aside class="lg:w-48 lg:shrink-0">

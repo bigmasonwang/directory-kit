@@ -40,6 +40,9 @@ zh-CN:
       title: 博客
     show:
       back: 返回博客
+  seo:
+    default_description: 发现和分享最好的工具、产品和资源
+    site_name: Dirkit
   tags:
     index:
       all: 全部

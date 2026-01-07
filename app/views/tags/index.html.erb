@@ -1,3 +1,5 @@
+<% content_for :title, @tag ? "##{@tag.name} - #{t('seo.site_name')}" : "#{t('tags.index.title')} - #{t('seo.site_name')}" %>
+
 <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
   <!-- Tags - horizontal on mobile, sidebar on desktop -->
   <aside class="lg:w-48 lg:shrink-0">

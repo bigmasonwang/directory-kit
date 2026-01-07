@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html data-theme="bumblebee">
+<html lang="<%= I18n.locale %>" data-theme="bumblebee">
   <head>
-    <title><%= content_for(:title) || "Dirkit" %></title>
+    <title><%= content_for(:title) || t('seo.site_name') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= content_for(:description) || t('seo.default_description') %>">
+    <link rel="canonical" href="<%= content_for(:canonical) || request.original_url.split('?').first %>">
+
+    <%# Open Graph %>
+    <meta property="og:title" content="<%= content_for(:title) || t('seo.site_name') %>">
+    <meta property="og:description" content="<%= content_for(:description) || t('seo.default_description') %>">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="<%= content_for(:og_type) || 'website' %>">
+    <meta property="og:site_name" content="<%= t('seo.site_name') %>">
+
+    <%# Twitter %>
+    <meta name="twitter:card" content="summary">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Dirkit">
+    <meta name="application-name" content="<%= t('seo.site_name') %>">
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

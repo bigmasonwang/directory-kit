@@ -1,3 +1,7 @@
+<% content_for :title, "#{@listing.name} - #{t('seo.site_name')}" %>
+<% content_for :description, truncate(@listing.description, length: 160) %>
+<% content_for :og_type, "article" %>
+
 <div class="max-w-2xl mx-auto">
   <%= link_to "← #{t('listings.show.back')}", root_path, class: "btn btn-ghost btn-sm mb-4" %>
 
