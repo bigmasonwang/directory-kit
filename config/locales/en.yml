@@ -1,46 +1,46 @@
+---
 en:
+  flash:
+    submission_pending: Thanks! Your submission is pending review.
   layouts:
     header:
-      submit: "Submit"
-      sign_in: "Sign in to Submit"
-      sign_out: "Sign out"
-      admin: "Admin"
-      categories: "Categories"
-      tags: "Tags"
-      blog: "Blog"
+      admin: Admin
+      blog: Blog
+      categories: Categories
+      sign_in: Sign in to Submit
+      sign_out: Sign out
+      submit: Submit
+      tags: Tags
   listings:
-    index:
-      all: "All"
-      categories: "Categories"
-      no_listings: "No listings yet."
-    show:
-      back: "Back"
-      visit_site: "Visit Site"
-      submitted_by: "Submitted by %{name}"
-      alternatives_to: "Alternatives to %{name}"
-    new:
-      title: "Submit a Listing"
-      name: "Name"
-      url: "URL"
-      category: "Category"
-      category_prompt: "Select a category"
-      description: "Description"
-      logo: "Logo"
-      logo_hint: "Optional. Recommended size: 200x200px"
-      tags: "Tags"
-      tags_hint: "Select up to 5 tags (optional)"
-      submit: "Submit for Review"
     card:
-      visit_site: "Visit site"
-  tags:
+      visit_site: Visit site
     index:
-      title: "Browse Tags"
-      all: "All"
+      all: All
+      no_listings: No listings yet.
+    new:
+      category: Category
+      category_prompt: Select a category
+      description: Description
+      logo: Logo
+      logo_hint: 'Optional. Recommended size: 200x200px'
+      name: Name
+      submit: Submit for Review
+      tags: Tags
+      tags_hint: Select up to 5 tags (optional)
+      title: Submit a Listing
+      url: URL
+    show:
+      alternatives_to: Alternatives to %{name}
+      back: Back
+      submitted_by: Submitted by %{name}
+      visit_site: Visit Site
   posts:
     index:
-      title: "Blog"
-      no_posts: "No posts yet."
+      no_posts: No posts yet.
+      title: Blog
     show:
-      back: "Back to Blog"
-  flash:
-    submission_pending: "Thanks! Your submission is pending review."
+      back: Back to Blog
+  tags:
+    index:
+      all: All
+      title: Browse Tags

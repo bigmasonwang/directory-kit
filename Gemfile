@@ -23,6 +23,9 @@ gem "jbuilder"
 gem "omniauth-google-oauth2"
 gem "omniauth-rails_csrf_protection"
 
+# Built-in Rails translations (time, dates, validations) for all locales
+gem "rails-i18n"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
@@ -63,6 +66,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # Find missing and unused translations
+  gem "i18n-tasks"
 end
 
 group :test do
