@@ -25,7 +25,12 @@ module Dirkit
     # config.eager_load_paths << Rails.root.join("extras")
 
     # I18n configuration
+    # If you want to support multiple locales
     config.i18n.available_locales = [ :en, :"zh-CN" ]
     config.i18n.default_locale = :en
+
+    # If you want to support single locale
+    # config.i18n.available_locales = [ :"zh-CN" ]
+    # config.i18n.default_locale = :"zh-CN"
   end
 end
