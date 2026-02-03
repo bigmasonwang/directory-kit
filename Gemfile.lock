@@ -230,7 +230,8 @@ GEM
     mini_magick (5.3.1)
       logger
     mini_mime (1.1.5)
-    minitest (5.27.0)
+    minitest (6.0.1)
+      prism (~> 1.5)
     msgpack (1.8.0)
     multi_xml (0.8.0)
       bigdecimal (>= 3.1, < 5)
@@ -521,7 +522,7 @@ DEPENDENCIES
   jbuilder
   kamal
   marksmith
-  minitest (~> 5.0)
+  minitest (~> 6.0)
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   propshaft

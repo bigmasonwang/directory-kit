@@ -78,7 +78,7 @@ group :test do
 
   # Pin minitest to 5.x until Rails 8.1.2 fixes Minitest 6 compatibility
   # https://github.com/rails/rails/issues/56406
-  gem "minitest", "~> 5.0"
+  gem "minitest", "~> 6.0"
 end
 gem "avo", ">= 3.2"
 gem "marksmith"
